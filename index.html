@@ -2,162 +2,197 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Имя Фамилия</title>
-<meta name="description" content="Личная страница: о себе, достижения и контакты">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#ffffff">
+<title>Nariman Kairmanov — Coach</title>
+<meta name="description" content="Нариман Каирманов — тренер по борьбе, Казахстан">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f6f5f2;
-    --surface: #ffffff;
-    --text: #15151a;
-    --muted: #5d5e66;
-    --line: #e4e2dc;
-    --accent: #c8102e;
-    --accent-ink: #ffffff;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #111114;
-      --surface: #1a1a1f;
-      --text: #f2f2f4;
-      --muted: #a2a3ab;
-      --line: #2a2a31;
-      --accent: #ff4d5e;
-      --accent-ink: #111114;
-    }
+    --bg: #ffffff;
+    --soft: #f3f5f9;
+    --text: #0f1729;
+    --muted: #5b6475;
+    --line: #e6e9ef;
+    --blue: #1747d6;
+    --navy: #0b1f4d;
+    --gold: #f2b705;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
   body {
     background: var(--bg);
     color: var(--text);
-    font: 400 17px/1.6 Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+    font: 400 16px/1.55 Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
     -webkit-font-smoothing: antialiased;
+    padding-bottom: calc(88px + env(safe-area-inset-bottom));
   }
-  a { color: inherit; }
-  .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 480px; margin: 0 auto; padding: 0 16px; }
 
-  header.nav {
-    position: sticky; top: 0; z-index: 10;
-    background: color-mix(in srgb, var(--bg) 85%, transparent);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--line);
-  }
-  header.nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
-  .logo { font-weight: 800; letter-spacing: -0.02em; text-decoration: none; }
-  .logo span { color: var(--accent); }
-  nav a { margin-left: 22px; text-decoration: none; color: var(--muted); font-size: 15px; font-weight: 500; }
-  nav a:hover { color: var(--text); }
-  @media (max-width: 560px) { nav a:not(:last-child) { display: none; } }
-
-  .hero { padding: 88px 0 72px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
-  .eyebrow { color: var(--accent); font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; }
-  h1 { font-size: clamp(40px, 7vw, 68px); line-height: 1.02; letter-spacing: -0.035em; font-weight: 800; margin: 14px 0 20px; }
-  .lead { color: var(--muted); font-size: 19px; max-width: 34ch; }
-  .btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
-  .btn { display: inline-block; padding: 13px 22px; border-radius: 10px; font-weight: 700; font-size: 15px; text-decoration: none; border: 1px solid var(--line); }
-  .btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  /* Профиль */
+  .profile { padding-top: 16px; }
   .photo {
-    aspect-ratio: 4 / 5; border-radius: 20px;
-    background: repeating-linear-gradient(135deg, var(--surface) 0 14px, var(--line) 14px 15px);
-    border: 1px solid var(--line);
-    display: grid; place-items: center; color: var(--muted); font-size: 14px;
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    background: linear-gradient(180deg, #dfe6f3 0%, #eef2f8 100%);
   }
-  @media (max-width: 760px) {
-    .hero { grid-template-columns: 1fr; padding: 56px 0 48px; gap: 32px; }
-    .photo { max-width: 320px; }
+  .photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+  .badge {
+    position: absolute; left: 14px; top: 14px;
+    background: var(--navy); color: #fff;
+    font-weight: 800; font-size: 13px; letter-spacing: 0.14em;
+    padding: 8px 14px; border-radius: 999px;
+  }
+  .who { text-align: center; padding: 22px 0 6px; }
+  .who .last { font-size: 34px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; }
+  .who .first { font-size: 26px; font-weight: 600; line-height: 1.2; margin-top: 2px; }
+  .role {
+    display: inline-block; margin-top: 14px;
+    background: var(--blue); color: #fff;
+    font-weight: 800; letter-spacing: 0.2em; font-size: 15px;
+    padding: 10px 26px; border-radius: 12px;
+  }
+  .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+  .fact { background: var(--soft); border-radius: 14px; padding: 12px 14px; }
+  .fact small { display: block; color: var(--muted); font-size: 12px; }
+  .fact b { font-size: 15px; font-weight: 700; }
+
+  /* Секции */
+  section { padding-top: 32px; }
+  h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; }
+  .text { color: var(--muted); }
+
+  .event {
+    background: var(--navy); color: #fff;
+    border-radius: 20px; padding: 22px 20px;
+    position: relative; overflow: hidden;
+  }
+  .event::after {
+    content: ""; position: absolute; right: -60px; top: -60px;
+    width: 180px; height: 180px; border-radius: 50%;
+    border: 28px solid rgba(255,255,255,0.06);
+  }
+  .event .tag { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+  .event .name { font-size: 24px; font-weight: 800; line-height: 1.15; margin: 8px 0 14px; text-transform: uppercase; }
+  .event .name span { color: var(--gold); }
+  .event .row { display: flex; gap: 8px; align-items: center; font-size: 15px; font-weight: 500; opacity: 0.92; }
+  .event .row + .row { margin-top: 4px; }
+
+  .history { list-style: none; margin-top: 12px; }
+  .history li { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .history li:last-child { border-bottom: 0; }
+  .history .year { flex: 0 0 48px; font-weight: 800; color: var(--blue); }
+  .history .title { font-weight: 700; }
+  .history .desc { color: var(--muted); font-size: 14px; }
+
+  .contacts { display: grid; gap: 10px; }
+  .contact {
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--soft); border-radius: 14px; padding: 14px 16px; min-height: 56px;
+  }
+  .contact small { display: block; color: var(--muted); font-size: 12px; }
+  .contact b { font-weight: 700; }
+  .contact .arrow { color: var(--blue); font-size: 20px; font-weight: 700; }
+
+  footer { text-align: center; color: var(--muted); font-size: 13px; padding: 32px 0 8px; }
+
+  /* Нижняя кнопка на телефоне */
+  .cta {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
+    background: rgba(255,255,255,0.92); backdrop-filter: blur(10px);
+    border-top: 1px solid var(--line);
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+  }
+  .cta a {
+    display: block; max-width: 448px; margin: 0 auto; text-align: center;
+    background: var(--blue); color: #fff; font-weight: 700; font-size: 16px;
+    padding: 15px; border-radius: 14px;
   }
 
-  section { padding: 64px 0; border-top: 1px solid var(--line); }
-  h2 { font-size: 30px; letter-spacing: -0.02em; font-weight: 800; margin-bottom: 24px; }
-  .about p { color: var(--muted); max-width: 62ch; margin-bottom: 14px; }
-
-  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 36px; }
-  .stat { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
-  .stat b { display: block; font-size: 36px; letter-spacing: -0.03em; line-height: 1.1; }
-  .stat span { color: var(--muted); font-size: 14px; }
-  @media (max-width: 560px) { .stats { grid-template-columns: 1fr; } }
-
-  .list { list-style: none; }
-  .list li { display: grid; grid-template-columns: 90px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--line); }
-  .list li:last-child { border-bottom: 0; }
-  .list .year { color: var(--accent); font-weight: 700; }
-  .list .title { font-weight: 700; }
-  .list .desc { color: var(--muted); font-size: 15px; }
-
-  .contacts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .contact { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; text-decoration: none; transition: border-color .15s; }
-  .contact:hover { border-color: var(--accent); }
-  .contact small { display: block; color: var(--muted); font-size: 13px; margin-bottom: 4px; }
-  .contact strong { font-weight: 700; word-break: break-word; }
-  @media (max-width: 680px) { .contacts { grid-template-columns: 1fr; } }
-
-  footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
+  @media (min-width: 900px) {
+    body { padding-bottom: 0; }
+    .wrap { max-width: 920px; }
+    .top { display: grid; grid-template-columns: 380px 1fr; gap: 48px; align-items: center; padding-top: 40px; }
+    .who { text-align: left; }
+    .who .last { font-size: 52px; }
+    .who .first { font-size: 34px; }
+    .cta { display: none; }
+    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  }
 </style>
 </head>
 <body>
 
-<header class="nav">
-  <div class="wrap">
-    <a class="logo" href="#">Имя<span>.</span></a>
-    <nav>
-      <a href="#about">О себе</a>
-      <a href="#achievements">Достижения</a>
-      <a href="#contacts">Контакты</a>
-    </nav>
-  </div>
-</header>
-
 <main class="wrap">
-  <div class="hero">
+  <div class="top profile">
+    <div class="photo">
+      <img src="photo.png" alt="Нариман Каирманов" width="750" height="1000">
+      <div class="badge">KAZ</div>
+    </div>
     <div>
-      <div class="eyebrow">Город, Казахстан</div>
-      <h1>Имя<br>Фамилия</h1>
-      <p class="lead">Одна-две строки о том, кто вы и чем занимаетесь. Например: спортсмен, тренер, специалист.</p>
-      <div class="btns">
-        <a class="btn primary" href="#contacts">Связаться</a>
-        <a class="btn" href="#about">Подробнее</a>
+      <div class="who">
+        <div class="last">KAIRMANOV</div>
+        <div class="first">Nariman</div>
+        <div class="role">COACH</div>
+      </div>
+      <div class="facts">
+        <div class="fact"><small>Страна</small><b>Казахстан</b></div>
+        <div class="fact"><small>Дата рождения</small><b>14.02.1972</b></div>
       </div>
     </div>
-    <div class="photo">Здесь будет фото</div>
   </div>
 
-  <section id="about" class="about">
-    <h2>О себе</h2>
-    <p>Здесь короткий рассказ: откуда вы, с чего всё началось, чем занимаетесь сейчас. Два-три абзаца достаточно.</p>
-    <p>Второй абзац — ваши ценности, подход к делу или то, чем вы можете быть полезны людям, которые сюда зашли.</p>
-    <div class="stats">
-      <div class="stat"><b>10+</b><span>лет опыта</span></div>
-      <div class="stat"><b>25</b><span>турниров / проектов</span></div>
-      <div class="stat"><b>100+</b><span>учеников / клиентов</span></div>
-    </div>
-  </section>
+  <div class="cols">
+    <div>
+      <section>
+        <h2>Главный турнир сезона</h2>
+        <div class="event">
+          <div class="tag">Senior · 2026</div>
+          <div class="name">World Wrestling Championships <span>2026</span></div>
+          <div class="row">📍 Астана, Казахстан</div>
+          <div class="row">📅 24 октября — 1 ноября 2026</div>
+        </div>
+      </section>
 
-  <section id="achievements">
-    <h2>Достижения</h2>
-    <ul class="list">
-      <li><div class="year">2026</div><div><div class="title">Название достижения</div><div class="desc">Короткое пояснение: где, что, какой результат.</div></div></li>
-      <li><div class="year">2025</div><div><div class="title">Название достижения</div><div class="desc">Короткое пояснение: где, что, какой результат.</div></div></li>
-      <li><div class="year">2023</div><div><div class="title">Название достижения</div><div class="desc">Короткое пояснение: где, что, какой результат.</div></div></li>
-    </ul>
-  </section>
-
-  <section id="contacts">
-    <h2>Контакты</h2>
-    <div class="contacts">
-      <a class="contact" href="#"><small>Телефон / WhatsApp</small><strong>+7 700 000 00 00</strong></a>
-      <a class="contact" href="#"><small>Telegram</small><strong>@username</strong></a>
-      <a class="contact" href="#"><small>Instagram</small><strong>@username</strong></a>
+      <section>
+        <h2>Турниры</h2>
+        <ul class="history">
+          <li>
+            <div class="year">2024</div>
+            <div>
+              <div class="title">Veteran World Championships</div>
+              <div class="desc">Пореч, Хорватия · 8–13 октября 2024</div>
+            </div>
+          </li>
+        </ul>
+      </section>
     </div>
-  </section>
+
+    <div>
+      <section>
+        <h2>О тренере</h2>
+        <p class="text">Тренер по борьбе из Казахстана. Здесь будет пара строк: стаж, где тренирует, чем гордится, каких учеников подготовил.</p>
+      </section>
+
+      <section id="contacts">
+        <h2>Контакты</h2>
+        <div class="contacts">
+          <a class="contact" href="#"><div><small>Телефон / WhatsApp</small><b>+7 700 000 00 00</b></div><span class="arrow">→</span></a>
+          <a class="contact" href="#"><div><small>Instagram</small><b>@username</b></div><span class="arrow">→</span></a>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <footer>© 2026 Nariman Kairmanov</footer>
 </main>
 
-<footer>
-  <div class="wrap">© 2026 Имя Фамилия</div>
-</footer>
+<div class="cta"><a href="#contacts">Связаться</a></div>
 
 </body>
 </html>
