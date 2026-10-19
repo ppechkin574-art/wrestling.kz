@@ -29,7 +29,15 @@
     -webkit-font-smoothing: antialiased;
     padding-bottom: calc(32px + env(safe-area-inset-bottom));
   }
-  .logo { display: flex; justify-content: center; padding-top: 16px; }
+  .logo {
+    display: flex; justify-content: center; align-items: center;
+    gap: 20px; padding: 20px 16px 8px;
+  }
+  .logo img {
+    height: 72px; width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.08));
+  }
   a { color: inherit; text-decoration: none; }
   .wrap { max-width: 480px; margin: 0 auto; padding: 0 16px; }
 
@@ -130,16 +138,8 @@
 
 <main class="wrap">
   <div class="logo">
-    <svg viewBox="0 0 120 120" width="72" height="72" role="img" aria-label="Wrestling Coach">
-      <defs><path id="ring" d="M60,60 m-41,0 a41,41 0 1,1 82,0 a41,41 0 1,1 -82,0"/></defs>
-      <circle cx="60" cy="60" r="58" fill="#0b1f4d"/>
-      <circle cx="60" cy="60" r="50" fill="none" stroke="#f2b705" stroke-width="2"/>
-      <circle cx="60" cy="60" r="32" fill="none" stroke="#f2b705" stroke-width="1.5"/>
-      <text font-family="Inter, sans-serif" font-size="9" font-weight="800" fill="#ffffff">
-        <textPath href="#ring" startOffset="0" textLength="252" lengthAdjust="spacing">WRESTLING COACH · WRESTLING COACH ·</textPath>
-      </text>
-      <text x="60" y="69" text-anchor="middle" font-family="Inter, sans-serif" font-size="26" font-weight="800" fill="#f2b705">NK</text>
-    </svg>
+    <img src="emblem.webp" alt="Wrestling emblem">
+    <img src="logo.png" alt="Wrestling logo">
   </div>
   <div class="top profile">
     <div class="photo">
